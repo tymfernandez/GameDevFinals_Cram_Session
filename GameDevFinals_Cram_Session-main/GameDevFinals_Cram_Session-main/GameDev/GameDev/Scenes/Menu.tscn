@@ -1,0 +1,57 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/Fonts/Roboto-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/Menu.gd" type="Script" id=2]
+[ext_resource path="res://ui/Menu.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=9]
+size = 25
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+
+[sub_resource type="StyleBoxFlat" id=3]
+
+[sub_resource type="StyleBoxFlat" id=4]
+
+[sub_resource type="DynamicFont" id=5]
+size = 25
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+
+[sub_resource type="StyleBoxFlat" id=7]
+
+[sub_resource type="StyleBoxFlat" id=8]
+
+[node name="Menu" type="Sprite"]
+position = Vector2( 512.654, 299.843 )
+scale = Vector2( 0.624812, 0.649691 )
+texture = ExtResource( 3 )
+script = ExtResource( 2 )
+
+[node name="Play" type="Button" parent="."]
+margin_left = -221.913
+margin_top = 3.32004
+margin_right = 297.087
+margin_bottom = 78.32
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+action_mode = 0
+text = "Play"
+
+[node name="Exit" type="Button" parent="."]
+margin_left = -186.703
+margin_top = 114.142
+margin_right = 256.297
+margin_bottom = 181.142
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+text = "Exit"
+
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]

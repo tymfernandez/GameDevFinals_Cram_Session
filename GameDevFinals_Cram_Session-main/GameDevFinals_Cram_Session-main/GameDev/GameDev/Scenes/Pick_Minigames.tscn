@@ -1,0 +1,124 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://ui/pickbg.png" type="Texture" id=1]
+[ext_resource path="res://ui/Minigames_picture/papertoss.png" type="Texture" id=2]
+[ext_resource path="res://ui/Minigames_picture/quicknotes.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Pick_Minigames.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Fonts/Roboto-Bold.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=13]
+size = 39
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+
+[sub_resource type="StyleBoxFlat" id=7]
+
+[sub_resource type="StyleBoxFlat" id=8]
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+
+[sub_resource type="StyleBoxFlat" id=11]
+
+[sub_resource type="StyleBoxFlat" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+
+[sub_resource type="StyleBoxFlat" id=3]
+
+[sub_resource type="StyleBoxFlat" id=4]
+
+[sub_resource type="DynamicFont" id=14]
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+
+[sub_resource type="StyleBoxFlat" id=16]
+
+[sub_resource type="StyleBoxFlat" id=17]
+
+[node name="Pick_Minigames" type="Sprite"]
+position = Vector2( 510, 294 )
+scale = Vector2( 1.49059, 1.43219 )
+texture = ExtResource( 1 )
+script = ExtResource( 4 )
+
+[node name="Quicknotes" type="Sprite" parent="."]
+position = Vector2( -216.693, -20.2486 )
+scale = Vector2( 0.181286, 0.199686 )
+texture = ExtResource( 3 )
+
+[node name="PaperToss" type="Sprite" parent="."]
+position = Vector2( 5.36694, -19.5504 )
+scale = Vector2( 0.177854, 0.196377 )
+texture = ExtResource( 2 )
+
+[node name="Act 1" type="Label" parent="."]
+margin_left = -128.808
+margin_top = -198.297
+margin_right = 131.192
+margin_bottom = -75.2971
+custom_fonts/font = SubResource( 13 )
+text = "Act 1:
+The Newbie"
+align = 1
+
+[node name="Goto_quicknotes" type="Button" parent="."]
+margin_left = -273.046
+margin_top = 56.5566
+margin_right = -152.046
+margin_bottom = 81.5566
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+text = "Quick Notes"
+icon_align = 1
+
+[node name="Goto_papertoss" type="Button" parent="."]
+margin_left = -46.9613
+margin_top = 57.2548
+margin_right = 64.0387
+margin_bottom = 82.2548
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/focus = SubResource( 12 )
+text = "Paper Toss"
+icon_align = 1
+
+[node name="Back" type="Button" parent="."]
+margin_left = -320.008
+margin_top = 139.646
+margin_right = -199.008
+margin_bottom = 164.646
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+text = "Back"
+
+[node name="Next" type="Button" parent="."]
+margin_left = 199.921
+margin_top = 145.93
+margin_right = 321.921
+margin_bottom = 173.93
+custom_fonts/font = SubResource( 14 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 17 )
+text = "Next"
+
+[connection signal="pressed" from="Goto_quicknotes" to="." method="_on_Goto_quicknotes_pressed"]
+[connection signal="pressed" from="Goto_papertoss" to="." method="_on_Goto_papertoss_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_Next_pressed"]
